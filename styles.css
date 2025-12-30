@@ -1,0 +1,102 @@
+:root {
+  --color-background: #0f1729;
+  --color-foreground: #e1e7ef;
+  --color-muted: #1b294b;
+  --color-muted-foreground: #94a3b8;
+  --color-secondary: #20325a;
+  --color-card: #131c34;
+  --color-card-foreground: #e1e7ef;
+  --color-border: #1c2b4f;
+  --spacing: 0.25rem;
+  --radius-2xl: 1rem;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  background-color: var(--color-background) !important;
+  color: var(--color-foreground) !important;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-foreground) !important;
+}
+
+p {
+  color: var(--color-muted-foreground) !important;
+}
+
+header nav {
+  background-color: var(--color-secondary);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+header nav ul li a {
+  color: var(--color-card-foreground) !important;
+  opacity: 0.7;
+}
+
+header nav ul li a:hover {
+  opacity: 1;
+}
+
+main {
+  margin-top: 84px;
+}
+
+.card {
+  background-image: radial-gradient(circle at 0 0, #ffffff14, #0000 50%);
+  background-color: color-mix(
+    in oklab,
+    var(--color-card) 95%,
+    transparent
+  ) !important;
+}
+
+@media (min-width: 40rem) {
+  .card {
+    padding: calc(var(--spacing) * 8);
+    border-radius: var(--radius-2xl) !important;
+  }
+}
+
+.bg-card {
+  background-color: var(--color-card);
+}
+
+.bg-muted\/40 {
+  background-color: color-mix(in oklab, var(--color-muted) 40%, transparent);
+}
+
+.hover\:bg-muted:hover {
+  background-color: var(--color-muted);
+}
+
+.img-zoom {
+  overflow: hidden;
+  width: 80px;
+  text-align: center;
+}
+
+.img-zoom img {
+  transition: transform 0.4s ease;
+  width: 70px;
+}
+
+div:has(.img-zoom):hover > .img-zoom img {
+  transform: scale(1.2);
+}
